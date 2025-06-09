@@ -1,11 +1,11 @@
-//const apiKey = "96f7decfb02973155dba4b3695b85b25";
+const apiKey = "96f7decfb02973155dba4b3695b85b25";
 
 function getWeather() {
     const city = document.getElementById("cityInput").value;
     if (!city) return;
 
-    //const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=tr&appid=${apiKey}`;
-    const url = `http://localhost:3000/weather?city=${city}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=tr&appid=${apiKey}`;
+    //const url = `http://localhost:3000/weather?city=${city}`;
     fetchWeather(url);
     getForecast(city);
 }

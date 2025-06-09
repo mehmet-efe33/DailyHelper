@@ -1,10 +1,10 @@
-//const NEWS_API_KEY = ''; // Buraya kendi key'ini koy
+const NEWS_API_KEY = 'pub_6039d917187d4ee6aeb0f737df616615'; // Buraya kendi key'ini koy
 const newsContainer = document.getElementById('news-section');
 
 async function fetchNews() {
     try {
-        //const response = await fetch(`https://newsdata.io/api/1/news?apikey=${NEWS_API_KEY}&language=tr&country=tr&category=top`);
-        const response = await fetch(`http://localhost:3000/news`);
+        const response = await fetch(`https://newsdata.io/api/1/news?apikey=${NEWS_API_KEY}&language=tr&country=tr&category=top`);
+        //const response = await fetch(`http://localhost:3000/news`);
         const data = await response.json();
 
         if (!data.results || data.results.length === 0) {
