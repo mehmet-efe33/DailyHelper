@@ -1,9 +1,10 @@
-const NEWS_API_KEY = 'pub_6039d917187d4ee6aeb0f737df616615'; // Buraya kendi key'ini koy
+//const NEWS_API_KEY = ''; // Buraya kendi key'ini koy
 const newsContainer = document.getElementById('news-section');
 
 async function fetchNews() {
     try {
-        const response = await fetch(`https://newsdata.io/api/1/news?apikey=${NEWS_API_KEY}&language=tr&country=tr&category=top`);
+        //const response = await fetch(`https://newsdata.io/api/1/news?apikey=${NEWS_API_KEY}&language=tr&country=tr&category=top`);
+        const response = await fetch(`http://localhost:3000/news`);
         const data = await response.json();
 
         if (!data.results || data.results.length === 0) {
@@ -13,6 +14,7 @@ async function fetchNews() {
 
         // Sadece ilk 3 haberi al
         const topNews = data.results.slice(0, 6);
+        //const topNews = data.articles.slice(0, 6); // Eğer newsapi.org kullanıyorsan
 
         newsContainer.innerHTML = ''; // Önceki içeriği temizle
 
@@ -22,7 +24,7 @@ async function fetchNews() {
             card.innerHTML = `
                 <div class="card h-100 shadow-sm">
                     <a href="${news.link}" target="_blank">
-                        <img src="${news.image_url || 'https://via.placeholder.com/400x200'}" class="card-img-top" alt="Haber Görseli">
+                        <img src="${news.image_url || 'https://via.placeholder.com/400x200'}" class="card-img-top img-fluid" alt="Haber Görseli">
                     </a>
                     <div class="card-body">
                         <h5 class="card-title">${news.title}</h5>

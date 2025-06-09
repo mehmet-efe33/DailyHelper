@@ -1,10 +1,11 @@
-const apiKey = "96f7decfb02973155dba4b3695b85b25";
+//const apiKey = "96f7decfb02973155dba4b3695b85b25";
 
 function getWeather() {
     const city = document.getElementById("cityInput").value;
     if (!city) return;
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=tr&appid=${apiKey}`;
+    //const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=tr&appid=${apiKey}`;
+    const url = `http://localhost:3000/weather?city=${city}`;
     fetchWeather(url);
     getForecast(city);
 }
@@ -53,7 +54,7 @@ function fetchWeather(url) {
       <p><strong>Sıcaklık:</strong> ${main.temp.toFixed(1)}°C</p>
       <p><strong>Hissedilen:</strong> ${main.feels_like.toFixed(1)}°C</p>
       <p><strong>Hava Durumu:</strong> ${weather[0].description}</p>
-      <img src="https://openweathermap.org/img/wn/${weather[0].icon}@2x.png" alt="Hava durumu simgesi" class="mt-3" />
+      <img src="https://openweathermap.org/img/wn/${weather[0].icon}@2x.png" alt="Hava durumu simgesi" class="mt-3 img-fluid" />
     </div>
   </div>
 `;
@@ -82,7 +83,7 @@ function getForecast(city) {
                 return `
                     <div class="card text-center p-2 m-2 shadow-sm" style="min-width: 120px;">
                         <h6><b>${date.toLocaleDateString('tr-TR', options)} Saat 12</b></h6>
-                        <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png" />
+                        <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png" class="img-fluid"/>
                         <p><b>${item.main.temp.toFixed(1)}°C</b></p>
                         <small><b>${item.weather[0].description}</b></small>
                     </div>

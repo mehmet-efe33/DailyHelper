@@ -1,0 +1,9 @@
+# node_modules klasörü
+node_modules/
+
+# .env dosyası (gizli bilgiler)
+.env
+
+# IDE dosyaları
+.vscode/
+*.log
