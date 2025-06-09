@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Takvim</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/takvimStyel.css">
+</head>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Daily Helper</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Anasayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hava.html">Hava Durumu</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="takvim.html">Takvim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kur.html">Kur Hesaplayıcı</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kur-grafik.html">Kur Grafiği</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="calendar" class="container">
+
+        <div id="calendar-header">
+            <button id="prevMonth" class="btn btn-outline-primary">&lt; Önceki</button>
+            <h2 id="monthYear"></h2>
+            <button id="nextMonth" class="btn btn-outline-primary">Sonraki &gt;</button>
+        </div>
+
+        <div id="calendar-grid">
+            <!-- Gün isimleri ve gün hücreleri JS ile gelecek -->
+        </div>
+    </div>
+
+    <!-- Not ekleme modalı -->
+    <div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="noteModalLabel" class="modal-title">Güne Not Ekle</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+          </div>
+          <div class="modal-body">
+            <textarea id="noteText" class="form-control" rows="5" placeholder="Notunuzu yazın..."></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="saveNote" class="btn btn-primary">Kaydet</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/takvim.js"></script>
+
+</body>
+
+</html>
