@@ -1,10 +1,22 @@
 #calendar {
-    max-width: 700px;
-    margin: 40px auto;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  table-layout: fixed;
+}
+
+@media (max-width: 768px) {
+  #calendar th, #calendar td {
+    font-size: 0.75rem;
+    padding: 0.3rem;
+  }
+}
+
+#calendar th, #calendar td {
+  width: 14.2857%; /* 100% / 7 gün */
+  min-width: 45px; /* mobilde daha iyi görünüm */
+  padding: 0.5rem;
+  text-align: center;
 }
 
 #calendar.dark-mode {
