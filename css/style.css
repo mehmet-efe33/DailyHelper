@@ -115,3 +115,9 @@ canvas {
   margin: auto;
   display: block;
 }
+
+.navbar .nav-link.active {
+  color: #fff !important;
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
+}

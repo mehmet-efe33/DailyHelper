@@ -6,43 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Helper</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <!-- Özel Stil -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Daily Helper</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Anasayfa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="hava.html">Hava Durumu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="takvim.html">Takvim</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kur.html">Kur Hesaplayıcı</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="kur-grafik.html">Kur Grafiği</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container py-5">
+<body class="bg-light d-flex flex-column min-vh-100">
+    <!-- HEADER burada yüklenecek -->
+    <header></header>
+
+    <div class="container py-5 flex-grow-1">
         <div class="row justify-content-center">
             <div class="col-md-6">
-
                 <div class="card shadow">
                     <div class="card-body text-center">
                         <h1 class="card-title mb-4">🌤️ Hava Durumu</h1>
@@ -52,22 +27,23 @@
                                 placeholder="Şehir girin..." style="margin-bottom: 20px;">
                             <button class="btn btn-primary" onclick="getWeather()">Göster</button>
                             <button class="btn btn-secondary" onclick="getLocationWeather()">📍 Konumum</button>
-                            <!-- Göster / Konumum butonlarının yanına ekle -->
                             <button class="btn btn-dark" onclick="toggleTheme()">🌙 / ☀️</button>
                         </div>
 
                         <div id="weatherResult" class="mt-4"></div>
                         <div id="forecastResult" class="mt-4"></div>
-
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
+    <!-- FOOTER burada yüklenecek -->
+    <footer></footer>
+
+    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/include.js"></script> <!-- Ortak header/footer yükleyici -->
     <script src="js/hava.js"></script>
 </body>
 
