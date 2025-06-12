@@ -11,14 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const rates = data.rates;
             const kurContainer = document.getElementById("kurContainer");
 
-            const onsAltin = rates.XAU; // 1 ons altın kaç TRY
-            const altinOran = onsAltin ? (onsAltin / 31.1035) : 0.00176; // gram altın
-
             const birimler = [
                 { isim: "Amerikan Doları", kod: "USD", oran: rates.USD },
                 { isim: "Euro", kod: "EUR", oran: rates.EUR },
-                { isim: "İngiliz Sterlini", kod: "GBP", oran: rates.GBP },
-                { isim: "Altın (gram)", kod: "GA", oran: altinOran }
+                { isim: "İngiliz Sterlini", kod: "GBP", oran: rates.GBP }
             ];
 
             birimler.forEach(kur => {
